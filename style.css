@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Frijole&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Ribeye&family=Special+Elite&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+body{
+  background-color:#F8F5F2;
+  padding: 19px 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 39px;
+  align-items: center;
+  color: #403d39;
+}
+
+
+.logo{
+  display: flex;
+  flex-direction: column;
+  align-self: flex-start;
+  align-items: center;
+  border: 1px solid #403d39;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: "Fredericka the Great";
+  font-size: 18px;
+  text-align: center;
+  max-width: 11ch;
+
+}
+
+
+.logo img{
+  width: 32px;
+
+}
+
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  
+  background-image:
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg"),
+    url("./images/paw.svg");
+
+  background-position:
+    10% 10%,
+    20% 25%,
+    33% 3%,
+    56% 7%,
+    79% 16%,
+    95% 13%,
+    90% 39%,
+    15% 70%,
+    34% 85%,
+    60% 75%,
+    80% 58%,
+    39% 58%,
+    90% 90%;
+
+  background-size:
+    28px,
+    40px,
+    32px,
+    50px,
+    30px,
+    45px,
+    36px,
+    52px,
+    39px,
+    42px,
+    30px,
+    39px,
+    47px;
+
+  background-repeat: no-repeat;
+  opacity: 0.06;
+  z-index: -1;
+
+}
+
+
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+
+.hero-title{
+  font-family: "Fredericka the Great";
+  font-size: 38px;
+  color: #403d39;
+}
+
+
+ .hero-subtitle {
+  font-family: "Noto Sans";
+  font-size: 18px;
+  max-width: 52ch;
+  text-align: center;
+
+}
+
+
+
+
+
+.control-tab {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-family: "Noto Sans";
+  font-size: 18px;
+  font-weight: 600;
+
+}
+
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+  background-color: #d6ccc2;
+  padding: 10px 25px;
+  border-radius: 22px;
+  font-size: 18px;
+  font-weight: 500;
+
+}
+
+
+#load-cats-btn {
+  font-family: "Noto Sans";
+  font-size: 18px;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 18px 28px;
+  background-color: #d6ccc2;
+  color: #403d39;
+  border: none;
+  border-radius: 22px;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+    
+}
+
+
+#load-cats-btn:hover, #load-cats-btn:focus-visible {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  #load-cats-btn:hover, #load-cats-btn:focus-visible {
+    transform: scale(1.1);
+  }
+}
+
+
+
+#limit-input {
+  width: 100px;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 22px;
+  outline: none;
+
+}
+
+
+#cats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 34px;
+
+}
+
+
+#cats-container h2 {
+  font-family: "Fredericka the Great";
+  font-size: 25px;
+  margin: 15px 0;
+  padding: 15px;
+  border: 1px solid #d6ccc2;
+  border-radius: 16px;
+
+
+}
+
+#cats-container h3, 
+#cats-container p {
+  font-family: "Noto Sans";
+}
+
+
+.cat-temperament {
+  min-height: 87px;
+
+}
+
+
+.cat-card {
+  padding: 19px;
+  border: 1px solid #d6ccc2;
+  background-color: #FBFAF8;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  line-height: 29px;
+  
+}
+
+
+
+.cat-card img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 16px;
+  display: block;
+  transition: 
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+}
+
+
+.cat-card img:hover, .cat-card img:focus-visible {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cat-card img:hover, .cat-card img:focus-visible {
+    transform: rotate(5deg);
+  }
+}
