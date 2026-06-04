@@ -206,6 +206,7 @@ body::before {
   padding: 15px;
   border: 1px solid #d6ccc2;
   border-radius: 16px;
+  text-align: center;
 
 
 }
