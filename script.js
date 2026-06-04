@@ -59,17 +59,15 @@ async function getCats() {
         <h2>${cat.name}</h2>
 
         <section>
-          <h3>Origin</h3>
-          <p>${cat.origin}</p>
+            <h3>📍 ${cat.origin}</h3>
         </section>
 
         <section class="cat-temperament">
-          <h3>Temperament</h3>
           <p>${cat.temperament}</p>
         </section>
 
+
         <section>
-          <h3>Description</h3>
           <p>${cat.description}</p>
         </section>
       `;

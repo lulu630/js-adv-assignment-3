@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredericka+the+Great&family=Frijole&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Ribeye&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 * {
 	margin: 0;
@@ -23,11 +23,8 @@ body{
   flex-direction: column;
   align-self: flex-start;
   align-items: center;
-  border: 1px solid #403d39;
-  padding: 5px;
-  border-radius: 5px;
-  font-family: "Fredericka the Great";
-  font-size: 18px;
+  font-family: "Playfair Display";
+  font-size: 19px;
   text-align: center;
   max-width: 11ch;
 
@@ -109,8 +106,8 @@ body::before {
 
 
 .hero-title{
-  font-family: "Fredericka the Great";
-  font-size: 38px;
+  font-family: "Playfair Display";
+  font-size: 34px;
   color: #403d39;
 }
 
@@ -122,8 +119,6 @@ body::before {
   text-align: center;
 
 }
-
-
 
 
 
@@ -200,7 +195,7 @@ body::before {
 
 
 #cats-container h2 {
-  font-family: "Fredericka the Great";
+  font-family: "Playfair Display";
   font-size: 25px;
   margin: 15px 0;
   padding: 15px;
@@ -218,8 +213,8 @@ body::before {
 
 
 .cat-temperament {
-  min-height: 87px;
-
+  min-height: 93px;
+  font-weight: 600; 
 }
 
 
@@ -230,9 +225,8 @@ body::before {
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  gap: 14px;
-  line-height: 29px;
-  
+  gap: 22px;
+  line-height: 32px;
 }
 
 
@@ -242,7 +236,7 @@ body::before {
   height: 230px;
   object-fit: cover;
   object-position: center;
-  border-radius: 16px;
+  border-radius: 4px;
   display: block;
   transition: 
     transform 0.3s ease,
@@ -251,12 +245,8 @@ body::before {
 }
 
 
-.cat-card img:hover, .cat-card img:focus-visible {
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
-}
-
 @media (prefers-reduced-motion: no-preference) {
   .cat-card img:hover, .cat-card img:focus-visible {
-    transform: rotate(5deg);
+  transform: rotate(-4deg) scale(1.06);
   }
 }
