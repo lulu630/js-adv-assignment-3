@@ -75,6 +75,5 @@ async function getCats() {
   }
 }
 
-
 loadCatsBtn.addEventListener("click", getCats);
 // run function when button is clicked
