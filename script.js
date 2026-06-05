@@ -8,7 +8,6 @@ const loadCatsBtn = document.querySelector("#load-cats-btn");
 // find the button that loads cat breeds
 
 
-
 async function getCats() {
   // create async function that loads cat breeds and images
 
@@ -54,35 +53,21 @@ async function getCats() {
 
         catCard.innerHTML = `
         ${imageUrl ? `<img src="${imageUrl}" alt="${cat.name}">` : ""}
-
-
         <h2>${cat.name}</h2>
-
-        <section>
-            <h3>📍 ${cat.origin}</h3>
-        </section>
-
-        <section class="cat-temperament">
-          <p>${cat.temperament}</p>
-        </section>
-
-
-        <section>
-          <p>${cat.description}</p>
-        </section>
+        <h3>📍 ${cat.origin}</h3>
+        <p class="cat-life">⏳ ${cat.life_span} years</p>
+        <p class="cat-temp">${cat.temperament}</p>
+        <p>${cat.description}</p>
       `;
         // add breed information and image
 
-
         return catCard;
         // return finished card
-
       })
     );
 
     catsContainer.append(...catCards);
     // add all cards to the page after every request is finished
-
 
   } catch (error) {
     catsContainer.innerHTML = "<p>Could not load cats. Please try again.</p>";
