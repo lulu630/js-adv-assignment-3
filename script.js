@@ -12,10 +12,20 @@ async function getCats() {
   // create async function that loads cat breeds and images
 
   try {
+    if (!window.CAT_API_BASE_URL) {
+      catsContainer.textContent = "Cat service is not connected yet. Please try again later.";
+      return;
+    }
+
+    if (!limitInput.reportValidity()) return;
     const limit = Number(limitInput.value);
+    if (!Number.isInteger(limit) || limit < 1 || limit > 20) return;
+
+    loadCatsBtn.disabled = true;
+    catsContainer.textContent = "Loading cats…";
     // get the number entered by the user
   
-    const breedsResponse = await fetch("https://api.thecatapi.com/v1/breeds");
+    const breedsResponse = await fetch(`${window.CAT_API_BASE_URL.replace(/\/$/, "")}/v1/breeds`);
     // request all cat breeds from the api
 
     if (!breedsResponse.ok) {
@@ -36,8 +46,12 @@ async function getCats() {
         // create a promise for each breed
 
         const imageResponse = await fetch(
-          `https://api.thecatapi.com/v1/images/search?breed_ids=${cat.id}`
+          `${window.CAT_API_BASE_URL.replace(/\/$/, "")}/v1/images/search?breed_ids=${encodeURIComponent(cat.id)}`
         ); // request an image for the current breed
+
+        if (!imageResponse.ok) {
+          throw new Error("Could not load cat image");
+        }
 
         const imageData = await imageResponse.json();
         // convert the image response into a javascript array
@@ -71,7 +85,8 @@ async function getCats() {
 
   } catch (error) {
     catsContainer.innerHTML = "<p>Could not load cats. Please try again.</p>";
-  
+  } finally {
+    loadCatsBtn.disabled = false;
   }
 }
 
